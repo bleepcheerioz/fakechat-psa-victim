@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dark Messenger PSA Mock</title>
+<style>
+  html,body{height:100%;margin:0;font-family:Segoe UI, Roboto, Arial, sans-serif;background:#07090b;color:#e6eef6}
+  .menubar{height:34px;background:#0b0e11;padding:6px 12px;border-bottom:1px solid #0f1113;color:#93a1b1;display:flex;align-items:center;gap:12px;font-size:13px}
+  .window{width:920px;height:620px;margin:30px auto;border-radius:10px;display:flex;overflow:hidden;background:#07090b;border:1px solid #0b0d0f;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+  .sidebar{width:300px;background:#0a0d10;padding:14px;border-right:1px solid #0b0d10}
+  .title{color:#9fb0c6;font-weight:700;margin-bottom:10px}
+  .contacts{height:520px;overflow:auto}
+  .contact{padding:10px;border-radius:8px;display:flex;gap:10px;align-items:center;margin-bottom:8px;background:linear-gradient(180deg,#0b0d10,#07090b)}
+  .avatar{width:44px;height:44px;border-radius:8px;background:#131722;display:flex;align-items:center;justify-content:center;color:#6da6ff;font-weight:700}
+  .main{flex:1;display:flex;flex-direction:column}
+  .header{padding:12px;border-bottom:1px solid #0b0d10;display:flex;align-items:center;gap:12px}
+  .header .name{font-weight:700;color:#e6eef6}
+  .status{font-size:13px;color:#7d8f9f}
+  .messages{flex:1;padding:18px;overflow:auto;background:linear-gradient(180deg,#06080a,#050608)}
+  .msg{max-width:68%;padding:10px 12px;border-radius:14px;margin-bottom:10px;line-height:1.3;font-size:15px}
+  .them{background:#101418;color:#d7eaf8;border-bottom-left-radius:4px}
+  .me{background:#163229;color:#dcffe4;margin-left:auto;border-bottom-right-radius:4px;text-align:left}
+  .time{font-size:12px;color:#6f8596;text-align:center;margin:8px 0}
+  .composer{padding:12px;border-top:1px solid #0b0d10;display:flex;gap:8px;align-items:center;background:#050608}
+  .input{flex:1;padding:10px;border-radius:20px;border:1px solid #15333a;background:#041012;color:#bfe6d6}
+  .btn{padding:8px 14px;border-radius:8px;border:none;background:#2b6db0;color:white;cursor:default}
+  .fake-link{color:#6da6ff;text-decoration:underline;cursor:default}
+  .meta{font-size:12px;color:#7e99ac;margin-top:6px}
+  /* Less visible scrollbar */
+  .messages::-webkit-scrollbar{width:8px;height:8px}
+  .messages::-webkit-scrollbar-track{background:transparent}
+  .messages::-webkit-scrollbar-thumb{background:rgba(120,140,160,0.12);border-radius:8px}
+  .contacts::-webkit-scrollbar{width:8px;height:8px}
+  .contacts::-webkit-scrollbar-track{background:transparent}
+  .contacts::-webkit-scrollbar-thumb{background:rgba(120,140,160,0.08);border-radius:8px}
+  /* Firefox */
+  .messages{scrollbar-width:thin;scrollbar-color: rgba(120,140,160,0.12) transparent}
+  .contacts{scrollbar-width:thin;scrollbar-color: rgba(120,140,160,0.08) transparent}
+  .admin-note{background:#111214;color:#ffe; padding:10px;border-radius:8px;margin-top:6px;font-size:13px}
+  .prop-tag{font-size:12px;color:#9fb0c6;margin-top:6px}
+  .attach-btn{width:36px;height:36px;border:none;border-radius:8px;background:#0b1216;color:#8fa8b8;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:default}
+</style>
+</head>
+<body>
+<div class="menubar"><span>File</span><span>Edit</span><span>View</span><span>Help</span></div>
+<div class="window" role="application" aria-label="Chat mockup">
+  <div class="sidebar">
+    <div class="title">Messages</div>
+    <div class="contacts">
+      <div class="contact"><div class="avatar">U8</div><div><div style="font-weight:700">user_834</div><div style="font-size:13px;color:#7b93a6">last seen 4m ago</div></div></div>
+      <div class="contact"><div class="avatar">SH</div><div><div style="font-weight:700">{{redacted}}</div><div style="font-size:13px;color:#7b93a6">typing...</div></div></div> 
+      <div class="contact"><div class="avatar">lib</div><div><div style="font-weight:700">library_bot</div><div style="font-size:13px;color:#7b93a6">online</div></div></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="header"><div style="width:44px;height:44px;border-radius:8px;background:#131722"></div><div><div class="name">{{redacted}}</div><div class="status">online • last seen today</div></div></div> 
+    <div class="messages" id="messages">
+      <div class="msg them">hey u there? u still at lib?</div>
+      <div class="msg me">yep im on pc 3 near the front</div>
+      <div class="msg them">cool. btw can u send some pics? like ur selfies? just for me</div>
+      <div class="msg me">uhh like what kind? i dunno if i should</div>
+      <div class="msg them">nothing weird, just private ones. trust me. i only share w ppl i know</div>
+      <div class="msg them">also need ur <span class="fake-link">student#</span> for the form</div>
+      <div class="msg me">i can send id but private pics i dont rlly like sendin</div>
+      <div class="msg them">ok but if u dont send i cant add u to the group. or i might have to show ur profile to the admin for proof</div>
+      <div class="msg them">and tbh if u wanna stay in the club u should just send it</div>
+      <div class="msg me">wait r u sayin u'll show ppl? that sounds like blackmail</div>
+      <div class="msg them">its chill. i wont post anything if u cooperate. just sayin</div>
+      <div class="msg me">id: 2024-8793</div>
+      <div class="msg me">phone: 0917-555-0199</div>
+      <div class="time">Today — 3:42 PM</div>
+      <div class="msg them" style="background:#1a1f26;color:#f3d6d6">[Admin Notice] This conversation is staged for a PSA about digital responsibility. Never give out private photos or personal info under pressure. If someone threatens you or tries to force you, tell a trusted adult.</div>
+      <div class="admin-note">Group 3 8-St. Paul <strong></div>
+    </div>
+    <div class="composer">
+      <button class="attach-btn">📎</button>
+      <input class="input" placeholder="Type a message..." value="This convo is for production use only — no real personal info should be used.">
+      <button class="btn">Send</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
